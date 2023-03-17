@@ -4,6 +4,7 @@ from datetime import datetime
 operators = ["+", "-", "*", "/"]
 # Cantidad de cuentas a resolver
 times = 5
+# Inicio contadores de respuestas
 correctas = 0
 incorrectas = 0
 # Contador inicial de tiempo.
@@ -19,6 +20,7 @@ for i in range(0, times):
     print(f"{i+1}- ¿Cuánto es {number_1} {operator} {number_2}?")
     # Le pedimos al usuario el resultado
     result = int(input("resultado: "))
+    #Calculamos la cuenta
     if (operator == "+"):
         resultado = number_1 + number_2
     elif(operator == "-"):
@@ -27,6 +29,7 @@ for i in range(0, times):
         resultado = number_1 * number_2
     else:
         resultado = number_1 / number_2
+    #Vemos si respondió bien
     if (result == resultado):
         correctas += 1
         print("Respuesta correcta")
@@ -39,6 +42,7 @@ end_time = datetime.now()
 # Restando las fechas obtenemos el tiempo transcurrido.
 total_time = end_time - init_time
 # Mostramos ese tiempo en segundos.
+# Mostramos cantidad de respuestas correctas e incorrectas
 print(f"\n Tardaste {total_time.seconds} segundos.")
 print(f"\n Tuviste {correctas} respuestas correctas.")
 print(f"\n Tuviste {incorrectas} respuestas incorrectas.")
